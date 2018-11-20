@@ -1,19 +1,16 @@
-import { IEmployee } from "./IEmployee";
-import { IKeyValuePair } from "./IKeyValuePair";
-import { IPerson } from "./IPerson";
-import { humanSex } from "./IPerson";
+import {IEmployee} from './IEmployee';
+import {IKeyValuePair} from './IKeyValuePair';
+import {IPerson} from './IPerson';
+import {humanSex} from './IPerson';
 
 export class Employee implements IPerson, IEmployee {
   private _fullname: string;
 
   constructor(
-    private _firstname: string,
-    private _lastname: string,
-    private _birthdate: Date,
-    private _sex: humanSex,
-    private _baseSalary: number
-  ) {
-    this._fullname = "";
+      private _firstname: string, private _lastname: string,
+      private _birthdate: Date, private _sex: humanSex,
+      private _baseSalary: number) {
+    this._fullname = '';
     this.UpdateFullname();
   }
 
@@ -41,7 +38,7 @@ export class Employee implements IPerson, IEmployee {
     return this._baseSalary * 1.78;
   }
 
-  public PrintTestUnionParam(discrimnatedUnionTest: string | number): void {
+  public PrintTestUnionParam(discrimnatedUnionTest: string|number): void {
     console.log(discrimnatedUnionTest.toString());
   }
 
