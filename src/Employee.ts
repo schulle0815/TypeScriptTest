@@ -10,7 +10,8 @@ export class Employee implements IPerson, IEmployee {
         private lastname: string,
         private birthdate: Date,
         private sex: humanSex,
-        private baseSalary: number
+        private baseSalary: number,
+        private salaryFactor: number
     ) {
         this.fullname = "";
         this.UpdateFullname();
@@ -37,7 +38,7 @@ export class Employee implements IPerson, IEmployee {
     }
 
     public CalculateSalary(): number {
-        return this.baseSalary * 1.78;
+        return this.baseSalary * this.salaryFactor;
     }
 
     public PrintTestUnionParam(discrimnatedUnionTest: string | number): void {
