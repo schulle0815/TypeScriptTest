@@ -1,6 +1,6 @@
 // contains properties and their values for type mapping
 export type Keyify<T> = {
-  //[P in keyof T]: T[P]
+  // [P in keyof T]: T[P]
   [P in keyof T]: P
 };
 
@@ -10,7 +10,7 @@ export function getKeysFromObject<T>(obj: T): Keyify<T> {
   const keysArray = Object.keys(obj);
 
   const stringifyObject = keysArray.reduce((p, c, i, a) => {
-    return {...p, [c]: c};
+    return { ...p, [c]: c };
   }, {});
   return stringifyObject as Keyify<T>;
 }

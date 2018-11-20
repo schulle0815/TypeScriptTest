@@ -1,5 +1,5 @@
 // type alias definition: Union
-type test = number|string;
+type test = number | string;
 
 export interface IPerson {
   PrintTestUnionParam(discrimnatedUnionTest: test): void;

@@ -1,48 +1,50 @@
-import {IEmployee} from './IEmployee';
-import {IKeyValuePair} from './IKeyValuePair';
-import {IPerson} from './IPerson';
-import {humanSex} from './IPerson';
+import { IEmployee } from "./IEmployee";
+import { IPerson } from "./IPerson";
+import { humanSex } from "./IPerson";
 
 export class Employee implements IPerson, IEmployee {
-  private _fullname: string;
+    private fullname: string;
 
-  constructor(
-      private _firstname: string, private _lastname: string,
-      private _birthdate: Date, private _sex: humanSex,
-      private _baseSalary: number) {
-    this._fullname = '';
-    this.UpdateFullname();
-  }
+    constructor(
+        private firstname: string,
+        private lastname: string,
+        private birthdate: Date,
+        private sex: humanSex,
+        private baseSalary: number
+    ) {
+        this.fullname = "";
+        this.UpdateFullname();
+    }
 
-  get fullname(): string {
-    return this._fullname;
-  }
+    get Fullname(): string {
+        return this.fullname;
+    }
 
-  get firstname(): string {
-    return this._firstname;
-  }
+    get Firstname(): string {
+        return this.firstname;
+    }
 
-  get lastname(): string {
-    return this._lastname;
-  }
+    get Lastname(): string {
+        return this.lastname;
+    }
 
-  get birtdate(): Date {
-    return this._birthdate;
-  }
+    get birtdate(): Date {
+        return this.birthdate;
+    }
 
-  get sex(): humanSex {
-    return this._sex;
-  }
+    get Sex(): humanSex {
+        return this.sex;
+    }
 
-  public CalculateSalary(): number {
-    return this._baseSalary * 1.78;
-  }
+    public CalculateSalary(): number {
+        return this.baseSalary * 1.78;
+    }
 
-  public PrintTestUnionParam(discrimnatedUnionTest: string|number): void {
-    console.log(discrimnatedUnionTest.toString());
-  }
+    public PrintTestUnionParam(discrimnatedUnionTest: string | number): void {
+        console.log(discrimnatedUnionTest.toString());
+    }
 
-  private UpdateFullname() {
-    this._fullname = `${this._firstname} ${this._lastname}`;
-  }
+    private UpdateFullname() {
+        this.fullname = `${this.firstname} ${this.lastname}`;
+    }
 }
